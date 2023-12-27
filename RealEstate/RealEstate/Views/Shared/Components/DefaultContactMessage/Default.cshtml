@@ -1,0 +1,48 @@
+﻿
+
+@model EntityLayer.Concrete.ContactMessage
+
+<div class="col-md-6">
+    <div class="wow fadeInUp" data-wow-delay="0.5s">
+        <p class="mb-4">Emlak ihtiyaçlarınız, sorularınız veya geri bildirimleriniz için buradayız. Bizimle iletişim kurmak için yukarıda belirtilen bilgileri kullanabilir veya aşağıdaki formu doldurabilirsiniz. Size en kısa sürede geri dönüş yapmaktan memnuniyet duyacağız.</p>
+        <form method="post" asp-controller="Default" asp-action="AddContactMessage">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="@Model.Name" placeholder="Adınız">
+                        <label for="name">Adınız</label>
+                        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" asp-for="@Model.Mail" id="email" placeholder="Mail Adresiniz">
+                        <label for="email">Mail Adresiniz</label>
+                        <span asp-validation-for="@Model.Mail" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="@Model.Subject" id="subject" placeholder="Konu">
+                        <label for="subject">Konu</label>
+                        <span asp-validation-for="@Model.Subject" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Mesaj" asp-for="@Model.Message" id="message" style="height: 150px"></textarea>
+                        <label for="message">Mesaj</label>
+                        <span asp-validation-for="@Model.Message" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">Mesaj Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

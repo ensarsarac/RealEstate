@@ -1,0 +1,30 @@
+﻿
+
+<div class="container-fluid nav-bar bg-transparent">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+
+            <h1 class="m-0 text-primary">XYZ Gayrimenkul</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="/Default/Index/" class="nav-item nav-link">Ana Sayfa</a>
+                <a href="/Default/About/" class="nav-item nav-link">Hakkımızda</a>
+                <a href="/Default/PropertyList/" class="nav-link">İlanlar</a>
+                <a href="/Default/Contact/" class="nav-item nav-link">İLETİŞİM</a>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a href="/Writer/Default/Index/" class="px-3 d-none d-lg-flex">@User.Identity.Name</a>
+                <a href="/Writer/Login/Logout/" class="btn btn-danger px-3 d-none d-lg-flex">Çıkış Yap</a>
+            }
+            else
+            {
+                <a href="/Writer/Login/Index/" class="btn btn-primary px-3 d-none d-lg-flex">Giriş Yap</a>
+            }
+        </div>
+    </nav>
+</div>

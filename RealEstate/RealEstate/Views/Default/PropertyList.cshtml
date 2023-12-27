@@ -1,0 +1,153 @@
+﻿
+@model List<EntityLayer.Concrete.Property>
+
+@{
+    ViewData["Title"] = "PropertyList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="container-xxl bg-white p-0">
+    <div class="container-fluid header bg-white p-0">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5 mt-lg-5">
+                <h1 class="display-5 animated fadeIn mb-4">İLANLAR</h1>
+
+            </div>
+            <div class="col-md-6 animated fadeIn">
+                <img class="img-fluid" src="~/Makaan Free Website Template - Free-CSS.com/real-estate-html-template/img/header.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("PropertySearch")
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-0 gx-5 align-items-end">
+                <div class="col-lg-6">
+                    <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                        <h1 class="mb-3">İlan Listesi</h1>
+                        <p>İlan listemizde aradığınız konutu bulmak artık çok daha kolay. Satılık veya kiralık bir ev mi arıyorsunuz? Ticari alan mı düşünüyorsunuz? İşte karşınızda sizin için seçilmiş birbirinden güzel seçenekler.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+
+                        <li class="nav-item me-2">
+                            <a href="/Default/PropertyList/0" class="btn btn-outline-primary">Hepsi</a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a href="/Default/PropertyList/1" class="btn btn-outline-primary">Satılık</a>
+                        </li>
+                        <li class="nav-item me-0">
+                            <a class="btn btn-outline-primary" href="/Default/PropertyList/2">Kiralık</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        @foreach (var item in Model)
+                        {
+                            @if (item.PropertyType.Name == "Araba")
+                            {
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="/Default/PropertyDetails/@item.ID/"><img class="img-fluid w-100" src="~/PropertyImage/@item.Image" style="height:250px;" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">@item.PropertyStatus.Name</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">@item.PropertyType.Name</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">@item.Price</h5>
+                                            <a class="d-block h5 mb-2" href="/Default/PropertyDetails/@item.ID/">@item.Title</a>
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <p class="justify-content-around">
+                                                        <i class="fa fa-map-marker-alt text-primary me-2"></i>@item.City, @item.Street
+
+                                                    </p>
+                                                </div>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <div class="col-sm-3 d-flex justify-content-end">
+                                                        <a href="/Default/AddFavorite/@item.ID/">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                }
+
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" style="height:500px;" data-wow-delay="0.1s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="/Default/PropertyDetails/@item.ID/"><img class="img-fluid w-100" src="~/PropertyImage/@item.Image" style="height:250px;" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">@item.PropertyStatus.Name</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">@item.PropertyType.Name</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">@item.Price</h5>
+                                            <a class="d-block h5 mb-2" href="/Default/PropertyDetails/@item.ID/">@item.Title</a>
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <p class="justify-content-around">
+                                                        <i class="fa fa-map-marker-alt text-primary me-2"></i>@item.City,
+                                                        @if (item.Street.Length > 15)
+                                                        {
+                                                        <p>@item.Street.Substring(0, 14) ...</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p>@item.Street</p>
+                                                    }
+
+                                                        </p>
+                                                    </div>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <div class="col-sm-3 d-flex justify-content-end">
+                                                        <a href="/Default/AddFavorite/@item.ID/">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                }
+
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>@item.Sqft m2</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>@item.Bet Yatak</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>@item.Bath Banyo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

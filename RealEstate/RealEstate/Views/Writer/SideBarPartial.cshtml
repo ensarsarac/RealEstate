@@ -1,0 +1,72 @@
+﻿
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        @await Component.InvokeAsync("UserInfo")
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Default/Index/">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Default/MyProfile/">
+                <span class="menu-title">Profil</span>
+                <i class="mdi mdi-account menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Property/MyFavoriteProperty/">
+                <span class="menu-title">Favoriler</span>
+                <i class="mdi mdi-creation menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Property/MyProperty/">
+                <span class="menu-title">İlanlarım</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Property/AddProperty/">
+                <span class="menu-title">Yeni İlan Oluştur</span>
+                <i class="mdi mdi-new-box menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Message/Inbox/">
+                <span class="menu-title">Gelen Mesajlar</span>
+                <i class="mdi mdi-inbox menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Message/Sendbox/">
+                <span class="menu-title">Giden Mesajlar</span>
+                <i class="mdi mdi-send menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Default/Index/">
+                <span class="menu-title">Siteye Dön</span>
+                <i class="mdi mdi-home menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Writer/Login/Logout/">
+                <span class="menu-title">Çıkış Yap</span>
+                <i class="mdi mdi-send menu-icon"></i>
+            </a>
+        </li>
+        @if (User.IsInRole("Admin"))
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/Default/Index/">
+                    <span class="menu-title">Admin Paneli</span>
+                    <i class="mdi mdi-account-network menu-icon"></i>
+                </a>
+            </li>
+        }
+
+    </ul>
+</nav>

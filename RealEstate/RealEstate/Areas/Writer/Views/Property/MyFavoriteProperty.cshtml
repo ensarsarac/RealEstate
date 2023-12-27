@@ -1,0 +1,35 @@
+﻿
+@model List<EntityLayer.Concrete.Favorite>
+
+@{
+    ViewData["Title"] = "MyFavoriteProperty";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+    int i = 0;
+}
+
+<h1>Favori İlanlarım</h1>
+<hr />
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>İlan Başlığı</th>
+        <th>İlan Sahibi</th>
+        <th>Favorilerden Çıkar</th>
+        <th>Detaylı Görüntüle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        i += 1;
+        <tr>
+            <td>@i</td>
+            <td>@item.Property.Title</td>
+            <td>@item.Property.AppUser.Name @item.Property.AppUser.Surname</td>
+            <td><a href="/Writer/Property/RemoveMyFavoriteProperty/@item.ID" class="btn btn-danger">Favorilerden Çıkar</a></td>
+            <td><a href="/Default/PropertyDetails/@item.PropertyID" class="btn btn-secondary">İlanı Görüntüle</a></td>
+        </tr>
+    }
+
+
+</table>

@@ -1,0 +1,53 @@
+﻿
+
+@model List<Favorite>
+@{ 
+    int i = 0;
+}
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Favori İlanlarım</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> İlan Başlığı </th>
+                                <th> İlan Sahibi </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count == 0)
+                            {
+                                <tr>
+                                    <td><h3>Favori İlanınız Bulunmamaktadır.</h3></td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    i += 1;
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>
+                                            <img src="~/PropertyImage/@item.Property.Image" class="mr-2" alt="image"> @item.Property.Title
+                                        </td>
+                                        <td> @item.AppUser.Name @item.AppUser.Surname </td>
+                                       
+                                    </tr>
+                                }
+
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

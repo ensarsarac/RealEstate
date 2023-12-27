@@ -1,0 +1,94 @@
+﻿
+@model PropertyViewModel
+
+@{
+    ViewData["Title"] = "AddProperty";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>Yeni İlan Oluştur</h1>
+<hr />
+
+<form method="post" action="/Writer/Property/AddProperty/" id="myform" onsubmit="sendForm(event)" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label class="form-label">Başlık</label>
+        <input type="text" class="form-control" asp-for="@Model.Title" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Detay</label>
+        <textarea class="form-control" rows="10" cols="6" asp-for="@Model.Description"> </textarea>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Fiyat</label>
+        <input type="text" class="form-control" asp-for="@Model.Price" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Şehir</label>
+        <input type="text" class="form-control" asp-for="@Model.City" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Sokak</label>
+        <input type="text" class="form-control" asp-for="@Model.Street" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Yatak</label>
+        <input type="text" class="form-control" asp-for="@Model.Bet" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Banyo</label>
+        <input type="text" class="form-control" asp-for="@Model.Bath" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Metre</label>
+        <input type="text" class="form-control" asp-for="@Model.Sqft" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Tip</label>
+        @Html.DropDownListFor(x => x.PropertyTypeId, (SelectList)ViewBag.selectList,"Seçiniz..", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label class="form-label">Tip</label>
+        @Html.DropDownListFor(x => x.PropertyStatusId, (SelectList)ViewBag.selectList2,"Seçiniz..", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Resim Yükle</label>
+        <input type="file" class="form-control" asp-for="@Model.ImageProperty" />
+    </div>
+
+    <button type="submit" id="btn" class="btn btn-outline-primary">İlan Kaydet</button>
+
+</form>
+
+@section Script{
+    <script>
+
+        function sendForm(e) {
+            e.preventDefault();
+
+            swal({
+                title: "Emin misin?",
+                text: "Bu ilanı kaydetmek istediğine emin misin?",
+                icon: "warning",
+                buttons: true,                
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("İlan başarıyla kayıt edildi.", {
+                            icon: "success",
+                        });
+                        const myform = document.querySelector("#myform");
+                        myform.submit();
+                    } else {
+                        swal("Kaydedilmedi.");
+                    }
+                });
+        }
+
+
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+}

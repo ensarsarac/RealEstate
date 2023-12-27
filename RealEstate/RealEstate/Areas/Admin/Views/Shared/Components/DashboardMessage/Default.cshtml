@@ -1,0 +1,47 @@
+﻿
+@model List<EntityLayer.Concrete.Message>
+
+<div class="col-lg-4">
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>Mesajlar</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content ibox-heading">
+            <h3><i class="fa fa-envelope-o"></i> Gelen Mesajlar</h3>
+            <small><i class="fa fa-tim"></i> @Model.Count() tane mesajın var.</small>
+        </div>
+        <div class="ibox-content">
+            <div class="feed-activity-list">
+
+                @foreach (var item in Model)
+                {
+                    <div class="feed-element">
+                        <div>
+                            <small class="float-right text-navy">@item.Date.ToString("dd-MMM-yyyy")</small>
+                            <strong>@item.SenderUser.Name @item.SenderUser.Surname</strong>
+                            @if (item.MessageContent.Length > 100)
+                            {
+                                <div>@item.MessageContent.Substring(0, 100) ...</div>
+                            }
+                            else
+                            {
+                                <div>@item.MessageContent</div>
+                            }
+                            
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿
+@model List<EntityLayer.Concrete.Property>
+
+@{
+    ViewData["Title"] = "MyProperty";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>İlanlarım</h1>
+<hr />
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Fiyat</th>
+        <th>Durum</th>
+        <th>Tür</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.Price</td>
+            <td>@item.PropertyStatus.Name</td>
+            <td>@item.PropertyType.Name</td>
+            <td>@item.Date.ToString("dd-MMM-yyyy")</td>
+            <td><a href="/Writer/Property/RemoveProperty/@item.ID/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Writer/Property/UpdateProperty/@item.ID/" class="btn btn-warning" id="delete">Düzenle</a></td>
+            <td><a href="/Default/PropertyDetails/@item.ID/" class="btn btn-secondary">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Writer/Property/AddProperty/" class="btn btn-primary">Yeni İlan Oluştur</a>
+@section Script{
+
+   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+}

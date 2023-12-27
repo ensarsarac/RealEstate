@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+        <div class="container-fluid header bg-white p-0">
+            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 p-5 mt-lg-5">
+                    <h1 class="display-5 animated fadeIn mb-4">Hakkımızda</h1>
+                </div>
+                <div class="col-md-6 animated fadeIn">
+                    <img class="img-fluid" src="~/Makaan Free Website Template - Free-CSS.com/real-estate-html-template/img/header.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("DefaultAbout1") 
+        <!-- About End -->
+        <!-- Call to Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded p-3">
+                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img class="img-fluid rounded w-100" src="~/Makaan Free Website Template - Free-CSS.com/real-estate-html-template/img/call-to-action.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h1 class="mb-3">Biz Kimiz ? </h1>
+                                    <p>
+                                        Emlak sektöründe faaliyet gösteren XYZ Emlak Şirketi, 5 yıl önce kurulmuş bir firma olarak sektöre hızlı bir giriş yaparak kendini kısa sürede önemli bir konuma taşımıştır. Şirket, kaliteli hizmet anlayışı, deneyimli kadrosu ve müşteri odaklı yaklaşımıyla sektördeki saygın yerini kazanmıştır.
+                                    </p>
+                                    <p>
+                                        Kuruluşundan bu yana, XYZ Emlak Şirketi, müşterilerine geniş bir portföy sunarak kiralık ve satılık konutlar, ticari alanlar ve yatırım gayrimenkulleri konusunda çeşitli seçenekler sunmaktadır. Şirket, müşteri memnuniyetini ön planda tutarak, her bir müşterisinin özel taleplerine ve ihtiyaçlarına odaklanmaktadır.
+                                    </p>
+                                    <p>
+                                        Teknolojiyi etkin bir şekilde kullanarak, online platformlarda güncel ve detaylı ilanlar sunan XYZ Emlak Şirketi, müşterilerine hızlı ve etkili bir şekilde ulaşmalarına olanak tanımaktadır. Ayrıca, gayrimenkul sektöründeki güncel gelişmeleri takip ederek, müşterilerine en iyi yatırım fırsatlarını sunmayı amaçlamaktadır.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action End -->
+        <!-- Team Start -->
+        @await Component.InvokeAsync("DefaultEmployee") 
+        <!-- Team End -->
+        <!-- Footer Start -->
+        

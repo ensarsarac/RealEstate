@@ -1,0 +1,62 @@
+﻿
+@model List<EntityLayer.Concrete.Message>
+
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>Gelen Kutusu</h1>
+<hr />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Sil</th>
+        <th>Mesajı Gör</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td><img src="~/UserImage/@item.SenderUser.Image" class="img-thumbnail" style="width:70px;height:70px;"/>  @item.SenderUser.Name @item.SenderUser.Surname</td>
+            <td>@item.Subject</td>
+            <td><a href="/Writer/Message/RemoveMessage/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Writer/Message/MessageDetails/@item.ID" class="btn btn-info">Mesajı Gör</a></td>
+        </tr>
+    }
+
+</table>
+<a href="#" data-target="#Modal1" data-toggle="modal" class="btn btn-primary">Yeni Mesaj Gönder</a>
+
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mesaj Gönder</h5>
+            </div>
+            <form method="post" action="/Writer/Message/AddMessage/">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" placeholder="Alıcı Mail" name="Mail" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Konu" name="Subject" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Mesaj" name="MessageContent" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

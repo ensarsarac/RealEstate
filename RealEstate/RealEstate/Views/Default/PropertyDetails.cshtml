@@ -1,0 +1,29 @@
+﻿
+@model EntityLayer.Concrete.Property
+
+@{
+    ViewData["Title"] = "PropertyDetails";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img class="h-100 w-100" src="~/PropertyImage/@Model.Image" />
+        </div>
+        <div class="col-sm-6 p-3 my-3">
+
+            <h3>@Model.Title</h3>
+            <p><b>Açıklama:</b><br /> @Model.Description</p>
+            <p><b>Fiyat:</b><br />@Model.Price</p>
+            <p><b>Adres:</b><br />@Model.City, @Model.Street</p>
+            <p><b>Kısa Bilgi: </b><br />@Model.Bet Yatak, @Model.Bath Banyo, @Model.Sqft m2</p>
+            <p><b>Durum: </b><br />@Model.PropertyStatus.Name @Model.PropertyType.Name</p>
+            <p><b>Satıcı Ad Soyad: </b><br />@Model.AppUser.Name @Model.AppUser.Surname</p>
+            <p><b>Satıcı İletişim: </b><br />@Model.AppUser.Email <br /> @Model.AppUser.PhoneNumber</p>
+
+        </div>
+    </div>
+</div>
+

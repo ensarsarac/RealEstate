@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("/Views/Default/HeadPartial.cshtml")
+<body>
+
+    <div class="container-xxl bg-white p-0">
+        @await Html.PartialAsync("/Views/Default/NavbarPartial.cshtml")
+
+        @RenderBody()
+        @await Html.PartialAsync("/Views/Default/FooterPartial.cshtml")
+
+    </div>
+
+    @await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
+</body>
+
+</html>

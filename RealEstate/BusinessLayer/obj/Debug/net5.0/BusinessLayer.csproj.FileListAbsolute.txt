@@ -1,0 +1,17 @@
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\BusinessLayer.deps.json
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\BusinessLayer.dll
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\BusinessLayer.pdb
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.AssemblyReference.cache
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.AssemblyInfoInputs.cache
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.AssemblyInfo.cs
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CopyComplete
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
+D:\Belgeler\source\repos\RealEstate\BusinessLayer\obj\Debug\net5.0\refint\BusinessLayer.dll

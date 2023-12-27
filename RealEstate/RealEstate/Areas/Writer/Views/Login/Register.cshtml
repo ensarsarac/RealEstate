@@ -1,0 +1,66 @@
+﻿
+@model RealEstateProje.Models.RegisterFormViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Giriş Paneli</title>
+
+    <link href="~/inspinia-gh-pages/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/inspinia-gh-pages/font-awes~/inspinia-gh-pages/ome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/inspinia-gh-pages/css/animate.css" rel="stylesheet">
+    <link href="~/inspinia-gh-pages/css/style.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name" style="visibility:hidden">IN+</h1>
+            </div>
+            <h3>RealEstate Kayıt Ol Paneli</h3>
+
+            <p>İlan vermek için kayıt olunuz.</p>
+            <form class="m-t" role="form" method="post">
+                <div class="form-group">
+                    <input type="text" asp-for="@Model.Name" class="form-control" placeholder="Adınız" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="@Model.Surname" class="form-control" placeholder="Soyadınız" required="">
+                </div>
+                <div class="form-group">
+                    <input type="email" asp-for="@Model.Email" class="form-control" placeholder="Email" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="@Model.Phone" class="form-control" placeholder="Telefon" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" asp-for="@Model.UserName" class="form-control" placeholder="Kullanıcı adı" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" asp-for="@Model.Password" class="form-control" placeholder="Şifre" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Kayıt Ol</button>
+                <a href="/Login/Index/" class="btn btn-secondary block full-width">Giriş Yap</a>
+
+            </form>
+            <p class="m-t"> <small>RealState Asp.Net Core 5.0 Proje &copy; @DateTime.Now.Year</small> </p>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="~/inspinia-gh-pages/js/jquery-3.1.1.min.js"></script>
+    <script src="~/inspinia-gh-pages/js/popper.min.js"></script>
+    <script src="~/inspinia-gh-pages/js/bootstrap.js"></script>
+
+</body>
+
+</html>

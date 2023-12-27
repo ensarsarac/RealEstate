@@ -1,0 +1,31 @@
+﻿
+@model Message
+
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>Mesaj Detayı</h1>
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+    </tr>
+
+    <tr>
+        <td>@Model.ID</td>
+        <td><img src="~/UserImage/@Model.SenderUser.Image" class="img-thumbnail" style="width:75px;height:75px;"/>  @Model.SenderUser.Name @Model.SenderUser.Surname</td>
+        <td><img src="~/UserImage/@Model.ReceiverUser.Image" class="img-thumbnail" style="width:75px;height:75px;"/>  @Model.ReceiverUser.Name @Model.ReceiverUser.Surname</td>
+        <td>@Model.Date.ToString("dd-MMM-yyyy")</td>
+        <td>@Model.Subject</td>
+        <td>@Model.MessageContent</td>
+    </tr>
+
+</table>

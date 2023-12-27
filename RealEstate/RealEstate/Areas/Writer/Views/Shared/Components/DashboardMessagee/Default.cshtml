@@ -1,0 +1,37 @@
+﻿
+@model List<Message>
+
+<div class="col-md-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Son Mesajlar</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> Gönderen </th>
+                            <th> Tarih </th>
+                            <th> Detaylar </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td> @item.ID </td>
+                                <td><img src="~/UserImage/@item.SenderUser.Image" class="img-thumbnail" style="width:50px;height:50px;"/> @item.SenderUser.Name @item.SenderUser.Surname </td>
+                                <td> @item.Date.ToString("dd-MMM-yyyy") </td>
+                                <td>
+                                    <a href="/Writer/Message/MessageDetails/@item.ID" class="btn btn-secondary">Detaylarını Gör</a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

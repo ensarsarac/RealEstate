@@ -1,0 +1,31 @@
+﻿
+@model List<EntityLayer.Concrete.About1>
+
+@{
+    Layout = null;
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="~/Makaan Free Website Template - Free-CSS.com/real-estate-html-template/img/@item.Image">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+
+                    <h1 class="mb-4">@item.Title</h1>
+                    <p class="mb-4">@item.Content</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>@item.Article1</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>@item.Article2</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>@item.Article3</p>
+
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

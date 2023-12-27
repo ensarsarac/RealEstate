@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+@await Html.PartialAsync("/Views/Admin/HeadPartial.cshtml")
+<body>
+    <div id="wrapper">
+        @await Component.InvokeAsync("AdminSideBar")
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            @await Html.PartialAsync("/Views/Admin/NavbarPartial.cshtml")
+            @RenderBody()
+            @await Html.PartialAsync("/Views/Admin/FooterPartial.cshtml")
+        </div>
+    </div>
+    @await Html.PartialAsync("/Views/Admin/ScriptPartial.cshtml")
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿
+@model List<Property>
+
+<div class="col-md-7 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Son İlanlarım</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> Başlık </th>
+                            <th> Fiyat </th>
+                            <th> Adres</th>
+                            <th> Detaylarını Gör</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td> @item.ID </td>
+                                <td><img src="~/PropertyImage/@item.Image" class="img-thumbnail" style="width:50px;height:50px;"/> @item.Title </td>
+                                <td> @item.Price </td>
+                                <td> @item.City </td>
+                                <td>
+                                    <a href="/Default/PropertyDetails/@item.ID" class="btn btn-secondary">Detaylarını Gör</a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
